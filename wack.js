@@ -5,6 +5,12 @@ let youScore = document.getElementById("you-score");
 let moleScore = document.getElementById("mole-score");
 youScore.innerHTML = parseInt(0);
 moleScore.innerHTML = parseInt(0);
+let media = window.matchMedia("(max-width: 600px)");
+let interval = 1400;
+
+if (media.matches) {
+  interval = 1000;
+}
 
 let random1 = Math.floor(Math.random() * 20);
 let random2 = Math.floor(Math.random() * 20);
@@ -18,7 +24,7 @@ setInterval(function () {
   mole.style.gridArea = `${random1} / ${random2} / ${random1 + 1} / ${
     random2 + 1
   }`;
-}, 1400);
+}, interval);
 
 window.onclick = function (event) {
   if (event.target.matches("#mole")) {
