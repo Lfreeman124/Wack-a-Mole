@@ -3,8 +3,8 @@ let grid = document.getElementById("grid");
 let iteration = 0;
 let youScore = document.getElementById("you-score");
 let moleScore = document.getElementById("mole-score");
-youScore.innerHTML = parseInt(0);
-moleScore.innerHTML = parseInt(0);
+youScore.textContent = parseInt(0);
+moleScore.textContent = parseInt(0);
 let media = window.matchMedia("(max-width: 600px)");
 let interval = 1400;
 let moleClicked = false;
@@ -25,15 +25,15 @@ setInterval(function () {
   mole.style.gridArea = `${random1} / ${random2} / ${random1 + 1} / ${
     random2 + 1
   }`;
-  if (!moleClicked) moleScore.innerHTML++;
+  if (!moleClicked) moleScore.textContent++;
   moleClicked = false;
 }, interval);
 
 window.onclick = function (event) {
   if (event.target.matches("#mole")) {
-    youScore.innerHTML++;
+    youScore.textContent++;
   } else {
-    moleScore.innerHTML++;
+    moleScore.textContent++;
   }
   moleClicked = true;
 };
