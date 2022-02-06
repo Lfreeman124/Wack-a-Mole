@@ -83,17 +83,17 @@ p {
 }
 @media only screen and (max-width: 600px) {
   .score {
-    width: 200px;
-    height: 150px;
+    width: 150px;
+    height: 100px;
   }
   h1 {
-    font-size: 30px;
+    font-size: 20px;
   }
   h2 {
     font-size: 20px;
   }
   p {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 
