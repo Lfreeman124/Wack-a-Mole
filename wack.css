@@ -81,6 +81,15 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+#mole {
+  animation: 1.4s pop linear infinite forwards;
+  position: absolute;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 600px) {
   .score {
     width: 150px;
@@ -95,17 +104,10 @@ p {
   p {
     font-size: 40px;
   }
+  #mole {
+    animation: 1s pop linear infinite forwards;
+  }
 }
-
-#mole {
-  animation: 1.4s pop linear infinite forwards;
-  position: absolute;
-  z-index: 3;
-
-  justify-content: center;
-  align-items: center;
-}
-
 @media only screen and (max-width: 600px) {
   @keyframes pop {
     from {
