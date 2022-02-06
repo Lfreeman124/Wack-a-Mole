@@ -1,4 +1,5 @@
 let mole = document.getElementById("mole");
+let grid = document.getElementById("grid");
 let iteration = 0;
 let youScore = document.getElementById("you-score");
 let moleScore = document.getElementById("mole-score");
