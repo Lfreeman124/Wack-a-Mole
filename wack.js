@@ -7,6 +7,7 @@ youScore.innerHTML = parseInt(0);
 moleScore.innerHTML = parseInt(0);
 let media = window.matchMedia("(max-width: 600px)");
 let interval = 1400;
+let moleClicked = false;
 
 if (media.matches) {
   interval = 1000;
@@ -24,6 +25,8 @@ setInterval(function () {
   mole.style.gridArea = `${random1} / ${random2} / ${random1 + 1} / ${
     random2 + 1
   }`;
+  if (!moleClicked) moleScore.innerHTML++;
+  moleClicked = false;
 }, interval);
 
 window.onclick = function (event) {
@@ -32,4 +35,5 @@ window.onclick = function (event) {
   } else {
     moleScore.innerHTML++;
   }
+  moleClicked = true;
 };
