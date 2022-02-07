@@ -6,11 +6,13 @@ let moleScore = document.getElementById("mole-score");
 youScore.textContent = parseInt(0);
 moleScore.textContent = parseInt(0);
 let media = window.matchMedia("(max-width: 600px)");
-let interval = 1400;
+let interval;
 let moleClicked = false;
 
 if (media.matches) {
   interval = 1000;
+} else {
+  interval = 1400;
 }
 
 let random1 = Math.floor(Math.random() * 20);
