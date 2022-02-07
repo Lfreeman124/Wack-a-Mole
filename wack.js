@@ -7,9 +7,10 @@ youScore.textContent = parseInt(0);
 moleScore.textContent = parseInt(0);
 let interval;
 let moleClicked = false;
+let media = window.matchMedia("(max-width: 600px)");
 
 function mediaQuery(x) {
-  if (x.matches) { // If media query matches
+  if (x.matches) {
     interval = 1000;
   } else {
     interval = 1400;
@@ -17,10 +18,7 @@ function mediaQuery(x) {
   return interval;
 }
 
-let media = window.matchMedia("(max-width: 600px)");
-mediaQuery(grid) // Call listener function at run time
-grid.addListener(mediaQuery) // Attach listener function on state changes
-
+mediaQuery(media);
 
 let random1 = Math.floor(Math.random() * 20);
 let random2 = Math.floor(Math.random() * 20);
