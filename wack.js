@@ -5,15 +5,22 @@ let youScore = document.getElementById("you-score");
 let moleScore = document.getElementById("mole-score");
 youScore.textContent = parseInt(0);
 moleScore.textContent = parseInt(0);
-let media = window.matchMedia("(max-width: 600px)");
 let interval;
 let moleClicked = false;
 
-if (media.matches) {
-  interval = 1000;
-} else {
-  interval = 1400;
+function mediaQuery(x) {
+  if (x.matches) { // If media query matches
+    interval = 1000;
+  } else {
+    interval = 1400;
+  }
+  return interval;
 }
+
+let media = window.matchMedia("(max-width: 600px)");
+mediaQuery(grid) // Call listener function at run time
+grid.addListener(mediaQuery) // Attach listener function on state changes
+
 
 let random1 = Math.floor(Math.random() * 20);
 let random2 = Math.floor(Math.random() * 20);
